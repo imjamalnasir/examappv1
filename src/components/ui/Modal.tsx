@@ -7,9 +7,10 @@ interface ModalProps {
   children: ReactNode
   onClose: () => void
   footer?: ReactNode
+  wide?: boolean
 }
 
-export function Modal({ open, title, children, onClose, footer }: ModalProps) {
+export function Modal({ open, title, children, onClose, footer, wide = false }: ModalProps) {
   if (!open) {
     return null
   }
@@ -21,7 +22,7 @@ export function Modal({ open, title, children, onClose, footer }: ModalProps) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
-        className="relative z-10 w-full max-w-md rounded-lg border border-slate-200 bg-white shadow-lg"
+        className={`relative z-10 w-full rounded-lg border border-slate-200 bg-white shadow-lg ${wide ? 'max-w-lg' : 'max-w-md'}`}
       >
         <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
           <h2 id="modal-title" className="text-base font-semibold text-slate-900">

@@ -1,5 +1,6 @@
 import { BrowserRouter } from 'react-router-dom'
 import { AcademicProvider } from '@/context/AcademicContext'
+import { ExamProvider } from '@/context/ExamContext'
 import { CourseProvider } from '@/context/CourseContext'
 import { DepartmentProvider } from '@/context/DepartmentContext'
 import { QuestionImportProvider } from '@/context/QuestionImportContext'
@@ -20,7 +21,9 @@ function App() {
                 <QuestionProvider>
                   <QuestionImportProvider>
                     <AcademicProvider>
-                      <AppRoutes />
+                      <ExamProvider>
+                        <AppRoutes />
+                      </ExamProvider>
                     </AcademicProvider>
                   </QuestionImportProvider>
                 </QuestionProvider>

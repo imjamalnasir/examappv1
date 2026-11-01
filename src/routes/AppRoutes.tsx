@@ -29,6 +29,13 @@ import { TopicCreatePage } from '@/pages/topics/TopicCreatePage'
 import { TopicEditPage } from '@/pages/topics/TopicEditPage'
 import { TopicsListPage } from '@/pages/topics/TopicsListPage'
 import { TopicViewPage } from '@/pages/topics/TopicViewPage'
+import { ExamApprovalPage } from '@/pages/exams/ExamApprovalPage'
+import { ExamCreatePage } from '@/pages/exams/ExamCreatePage'
+import { ExamEditPage } from '@/pages/exams/ExamEditPage'
+import { ExamForwardPage } from '@/pages/exams/ExamForwardPage'
+import { ExamQuestionsPage } from '@/pages/exams/ExamQuestionsPage'
+import { ExamsListPage } from '@/pages/exams/ExamsListPage'
+import { ExamViewPage } from '@/pages/exams/ExamViewPage'
 
 export function AppRoutes() {
   return (
@@ -71,6 +78,16 @@ export function AppRoutes() {
           <Route path="new" element={<TopicCreatePage />} />
           <Route path=":id" element={<TopicViewPage />} />
           <Route path=":id/edit" element={<TopicEditPage />} />
+        </Route>
+
+        <Route path="exams">
+          <Route index element={<ExamsListPage />} />
+          <Route path="new" element={<ExamCreatePage />} />
+          <Route path=":id" element={<ExamViewPage />} />
+          <Route path=":id/edit" element={<ExamEditPage />} />
+          <Route path=":id/questions" element={<ExamQuestionsPage />} />
+          <Route path=":id/forward" element={<ExamForwardPage />} />
+          <Route path=":id/approval" element={<ExamApprovalPage />} />
         </Route>
 
         <Route path="question-bank">

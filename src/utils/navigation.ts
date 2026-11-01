@@ -1,4 +1,12 @@
-import { BookOpen, Building2, FileQuestionMark, GraduationCap, Layers, Library } from 'lucide-react'
+import {
+  BookOpen,
+  Building2,
+  ClipboardCheck,
+  FileQuestionMark,
+  GraduationCap,
+  Layers,
+  Library,
+} from 'lucide-react'
 import type { BreadcrumbItem, NavItem } from '@/types/navigation'
 
 export const APP_NAME = 'University Management System'
@@ -10,6 +18,7 @@ export const navItems: NavItem[] = [
   { label: 'Subjects', path: '/subjects', icon: BookOpen },
   { label: 'Topics', path: '/topics', icon: Layers },
   { label: 'Question Bank', path: '/question-bank', icon: FileQuestionMark },
+  { label: 'Exams', path: '/exams', icon: ClipboardCheck },
 ]
 
 const routeLabels: Record<string, string> = {
@@ -19,6 +28,10 @@ const routeLabels: Record<string, string> = {
   subjects: 'Subjects',
   topics: 'Topics',
   'question-bank': 'Question Bank',
+  exams: 'Exams',
+  questions: 'Questions',
+  forward: 'Forward to Approval',
+  approval: 'Approval',
   semesters: 'Semesters',
   new: 'Add',
   edit: 'Edit',
@@ -32,6 +45,7 @@ const singularLabels: Record<string, string> = {
   subjects: 'Subject',
   topics: 'Topic',
   'question-bank': 'Question',
+  exams: 'Exam',
 }
 
 const entityIdPattern = /^[A-Z]{2,5}-\d+$/i
@@ -86,6 +100,28 @@ export function getPageTitle(pathname: string): string {
       return segments.length > 3 ? 'Import Details' : 'Import History'
     }
     return 'Import Questions'
+  }
+
+  if (moduleKey === 'exams') {
+    if (last === 'new') {
+      return 'Add Exam'
+    }
+    if (last === 'edit') {
+      return 'Edit Exam'
+    }
+    if (last === 'questions') {
+      return 'Select Questions'
+    }
+    if (last === 'forward') {
+      return 'Forward to Approval'
+    }
+    if (last === 'approval') {
+      return 'Exam Approval'
+    }
+    if (entityIdPattern.test(last)) {
+      return 'Exam Details'
+    }
+    return 'Exams'
   }
 
   if (moduleKey === 'academics' && segments.includes('semesters')) {

@@ -41,17 +41,17 @@ export function DepartmentViewPage() {
     return (
       <div>
         <PageHeader
-          title="Department Not Found"
+          title="Wing Not Found"
           breadcrumbs={[
-            { label: 'Departments', path: '/departments' },
+            { label: 'Wings', path: '/wings' },
             { label: 'Not Found' },
           ]}
         />
         <div className="rounded-lg border border-slate-200 bg-white p-6 text-sm text-slate-600">
-          <p>The requested department does not exist or was deleted.</p>
-          <Button className="mt-4" variant="secondary" onClick={() => navigate('/departments')}>
+          <p>The requested wing does not exist or was deleted.</p>
+          <Button className="mt-4" variant="secondary" onClick={() => navigate('/wings')}>
             <ArrowLeft className="h-4 w-4" />
-            Back to Departments
+            Back to Wings
           </Button>
         </div>
       </div>
@@ -61,7 +61,7 @@ export function DepartmentViewPage() {
   const requestDelete = () => {
     if (hasDependencies(dependencyCounts)) {
       toast.error(
-        formatDependencyBlockMessage('department', department.name, dependencyCounts),
+        formatDependencyBlockMessage('wing', department.name, dependencyCounts),
       )
       return
     }
@@ -70,26 +70,26 @@ export function DepartmentViewPage() {
 
   const handleDelete = () => {
     removeDepartment(department.id)
-    toast.success(`Department "${department.name}" deleted.`)
-    navigate('/departments')
+    toast.success(`Wing "${department.name}" deleted.`)
+    navigate('/wings')
   }
 
   return (
     <div>
       <PageHeader
         title={department.name}
-        description="Complete department information."
+        description="Complete wing information."
         breadcrumbs={[
-          { label: 'Departments', path: '/departments' },
+          { label: 'Wings', path: '/wings' },
           { label: department.name },
         ]}
         actions={
           <>
-            <Button variant="secondary" onClick={() => navigate('/departments')}>
+            <Button variant="secondary" onClick={() => navigate('/wings')}>
               <ArrowLeft className="h-4 w-4" />
               Back
             </Button>
-            <Button onClick={() => navigate(`/departments/${department.id}/edit`)}>
+            <Button onClick={() => navigate(`/wings/${department.id}/edit`)}>
               <Pencil className="h-4 w-4" />
               Edit
             </Button>
@@ -101,7 +101,7 @@ export function DepartmentViewPage() {
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 px-5 py-4">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-              Department ID
+              Wing ID
             </p>
             <p className="mt-1 text-sm font-medium text-slate-900">{department.id}</p>
           </div>
@@ -111,13 +111,13 @@ export function DepartmentViewPage() {
         <dl className="grid gap-6 p-5 sm:grid-cols-2">
           <div>
             <dt className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-              Department Name
+              Wing Name
             </dt>
             <dd className="mt-1 text-sm text-slate-900">{department.name}</dd>
           </div>
           <div>
             <dt className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-              Department Code
+              Wing Code
             </dt>
             <dd className="mt-1 text-sm text-slate-900">{department.code}</dd>
           </div>
@@ -163,10 +163,10 @@ export function DepartmentViewPage() {
             Delete
           </Button>
           <div className="flex gap-2">
-            <Button variant="secondary" onClick={() => navigate('/departments')}>
+            <Button variant="secondary" onClick={() => navigate('/wings')}>
               Back
             </Button>
-            <Link to={`/departments/${department.id}/edit`}>
+            <Link to={`/wings/${department.id}/edit`}>
               <Button>
                 <Pencil className="h-4 w-4" />
                 Edit
@@ -178,7 +178,7 @@ export function DepartmentViewPage() {
 
       <ConfirmDialog
         open={confirmOpen}
-        title="Delete Department"
+        title="Delete Wing"
         message={`Are you sure you want to delete "${department.name}"? This action cannot be undone.`}
         onCancel={() => setConfirmOpen(false)}
         onConfirm={handleDelete}

@@ -47,7 +47,7 @@ export function DepartmentForm({
     <form onSubmit={handleSubmit} className="space-y-5 rounded-lg border border-slate-200 bg-white p-5 sm:p-6">
       <div className="grid gap-5 sm:grid-cols-2">
         <Input
-          label="Department Name"
+          label="Wing Name"
           name="name"
           required
           value={values.name}
@@ -59,13 +59,13 @@ export function DepartmentForm({
           }}
         />
         <Input
-          label="Department Code"
+          label="Wing Code"
           name="code"
           required
           value={values.code}
           error={errors.code}
           placeholder="e.g. CS"
-          hint="Must be unique across departments."
+          hint="Must be unique across wings."
           onChange={(event) => {
             setValues((current) => ({ ...current, code: event.target.value.toUpperCase() }))
             setErrors((current) => ({ ...current, code: undefined }))
@@ -78,7 +78,7 @@ export function DepartmentForm({
         name="description"
         value={values.description}
         error={errors.description}
-        placeholder="Brief overview of the department"
+        placeholder="Brief overview of the wing"
         onChange={(event) => {
           setValues((current) => ({ ...current, description: event.target.value }))
           setErrors((current) => ({ ...current, description: undefined }))

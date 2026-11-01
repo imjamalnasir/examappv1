@@ -10,7 +10,7 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
   return (
     <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-sm text-slate-500">
       <Link
-        to="/departments"
+        to="/wings"
         className="inline-flex items-center rounded p-1 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
         aria-label="Home"
       >

@@ -31,7 +31,7 @@ export function CourseCreatePage() {
     <div>
       <PageHeader
         title="Add Course"
-        description="Create a new course and link it to a department."
+        description="Create a new course and link it to a wing."
         breadcrumbs={[
           { label: 'Courses', path: '/courses' },
           { label: 'Add' },

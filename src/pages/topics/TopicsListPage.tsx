@@ -120,7 +120,7 @@ export function TopicsListPage() {
     <div>
       <PageHeader
         title="Topics"
-        description="Manage topics linked through department, course, and subject hierarchy."
+        description="Manage topics linked through wing, course, and subject hierarchy."
         breadcrumbs={[{ label: 'Topics' }]}
         actions={
           <Button onClick={() => navigate('/topics/new')}>
@@ -139,7 +139,7 @@ export function TopicsListPage() {
               setSearch(event.target.value)
               setPage(1)
             }}
-            placeholder="Search by topic, subject, course, or department..."
+            placeholder="Search by topic, subject, course, or wing..."
             className="h-10 w-full rounded-md border border-slate-300 bg-white px-3 text-sm outline-none focus:border-sky-600 focus:ring-2 focus:ring-sky-600/20 xl:max-w-sm"
           />
           <select
@@ -152,7 +152,7 @@ export function TopicsListPage() {
             }}
             className="h-10 rounded-md border border-slate-300 bg-white px-3 text-sm outline-none focus:border-sky-600 focus:ring-2 focus:ring-sky-600/20 xl:w-48"
           >
-            <option value="All">All Departments</option>
+            <option value="All">All Wings</option>
             {departments.map((department) => (
               <option key={department.id} value={department.id}>
                 {department.name}

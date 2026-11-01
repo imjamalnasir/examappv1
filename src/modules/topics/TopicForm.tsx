@@ -86,13 +86,13 @@ export function TopicForm({
     >
       <div className="grid gap-5 sm:grid-cols-3">
         <Select
-          label="Department"
+          label="Wing"
           name="departmentId"
           required
           options={departmentOptions}
           value={values.departmentId}
           error={errors.departmentId}
-          placeholder="Select a department"
+          placeholder="Select a wing"
           onChange={(event) => {
             const departmentId = event.target.value
             setValues((current) => ({
@@ -116,7 +116,7 @@ export function TopicForm({
           options={courseOptions}
           value={values.courseId}
           error={errors.courseId}
-          placeholder={values.departmentId ? 'Select a course' : 'Select a department first'}
+          placeholder={values.departmentId ? 'Select a course' : 'Select a wing first'}
           disabled={!values.departmentId}
           onChange={(event) => {
             const courseId = event.target.value

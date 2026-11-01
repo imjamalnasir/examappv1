@@ -23,7 +23,7 @@ export function validateSubjectForm(
   }
 
   if (!values.departmentId) {
-    errors.departmentId = 'Department is required.'
+    errors.departmentId = 'Wing is required.'
   }
 
   if (!values.courseId) {
@@ -33,7 +33,7 @@ export function validateSubjectForm(
     if (!course) {
       errors.courseId = 'Selected course is invalid.'
     } else if (values.departmentId && course.departmentId !== values.departmentId) {
-      errors.courseId = 'Selected course must belong to the chosen department.'
+      errors.courseId = 'Selected course must belong to the chosen wing.'
     }
   }
 

@@ -177,7 +177,7 @@ export const initialAcademics: AcademicSession[] = [
         number: 1,
         startDate: '2028-08-21',
         endDate: '2028-12-15',
-        description: 'Initial fall allocation pending department review.',
+        description: 'Initial fall allocation pending wing review.',
         subjects: [{ subjectId: 'SUB-001' }],
       },
     ],

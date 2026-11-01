@@ -24,7 +24,7 @@ function seed(
 export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
   seed('Valid true/false question with a Question ID.', {
     questionId: 'QB-901',
-    course: 'BSCS',
+    course: '-',
     topic: 'Variables and Data Types',
     questionType: 'T/F',
     difficulty: 'Easy',
@@ -33,7 +33,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
     explanation: 'A constant keeps the value it was given when it was created.',
   }),
   seed('Warning. This question text is repeated on a later row in the sample file.', {
-    course: 'Bachelor of Science in Computer Science',
+    course: 'ATO',
     topic: 'TOP-002',
     questionType: 'T/F',
     difficulty: 'Medium',
@@ -56,7 +56,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
     explanation: 'HAVING filters grouped rows. WHERE filters rows before they are grouped.',
   }),
   seed('Valid MCQ with two correct options, entered as A,C.', {
-    course: 'BSCS',
+    course: '-',
     topic: 'Arrays and Linked Lists',
     questionType: 'MCQs',
     difficulty: 'Hard',
@@ -70,7 +70,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
   }),
   seed('Valid MCQ that uses only two option columns.', {
     questionId: 'QB-903',
-    course: 'MSAI',
+    course: 'AE (JNC-AE)',
     topic: 'Supervised Learning Overview',
     questionType: 'MCQs',
     difficulty: 'Easy',
@@ -81,7 +81,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
     explanation: 'Classification predicts a category. Regression predicts a number.',
   }),
   seed('Valid subjective question with a model answer, guidelines, and marks.', {
-    course: 'Master of Science in Artificial Intelligence',
+    course: 'AE (JNC-AE)',
     topic: 'Feedforward Neural Networks',
     questionType: 'Subjective',
     difficulty: 'Hard',
@@ -94,7 +94,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
   }),
   seed('Valid subjective question. Model answer, guidelines, and marks are left blank.', {
     questionId: 'QB-904',
-    course: 'MBA',
+    course: 'DPC (O)',
     topic: 'Competitive Advantage Analysis',
     questionType: 'Subjective',
     difficulty: 'Medium',
@@ -110,7 +110,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
   }),
   seed('Warning. The question text matches a question already stored for this course.', {
     questionId: 'QB-905',
-    course: 'BSCS',
+    course: '-',
     topic: 'Variables and Data Types',
     questionType: 'T/F',
     difficulty: 'Easy',
@@ -118,8 +118,8 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
       'In most programming languages, a variable must be declared before its value can be used in an expression.',
     correctAnswer: 'True',
   }),
-  seed('Warning. The course and topic exist, but both are inactive.', {
-    course: 'BAENG',
+  seed('Invalid. The course is inactive, and the topic does not exist.', {
+    course: 'JNC (Dvr)',
     topic: 'Romantic Poetry Themes',
     questionType: 'Subjective',
     difficulty: 'Easy',
@@ -129,7 +129,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
   }),
   seed('Warning. Option columns are filled in and will be ignored for a true/false question.', {
     questionId: 'QB-906',
-    course: 'BSCS',
+    course: '-',
     topic: 'Functions and Modular Design',
     questionType: 'T/F',
     difficulty: 'Medium',
@@ -141,7 +141,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
   }),
   seed('Warning. Duplicate of the while-loop question earlier in this file.', {
     questionId: 'QB-907',
-    course: 'BSCS',
+    course: '-',
     topic: 'Control Structures',
     questionType: 'T/F',
     difficulty: 'Medium',
@@ -157,7 +157,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
     correctAnswer: 'True',
   }),
   seed('Invalid. The topic exists, but it belongs to a different course.', {
-    course: 'BSCS',
+    course: '-',
     topic: 'Competitive Advantage Analysis',
     questionType: 'T/F',
     difficulty: 'Easy',
@@ -165,7 +165,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
     correctAnswer: 'True',
   }),
   seed('Invalid. The topic does not exist.', {
-    course: 'BSCS',
+    course: '-',
     topic: 'Photon Entanglement',
     questionType: 'T/F',
     difficulty: 'Hard',
@@ -174,7 +174,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
   }),
   seed('Invalid. The difficulty level is not Easy, Medium, or Hard.', {
     questionId: 'QB-908',
-    course: 'BSCS',
+    course: '-',
     topic: 'Stacks and Queues',
     questionType: 'MCQs',
     difficulty: 'Expert',
@@ -186,14 +186,14 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
     correctAnswer: 'A',
   }),
   seed('Invalid. The true/false question has no correct answer.', {
-    course: 'BSCS',
+    course: '-',
     topic: 'Variables and Data Types',
     questionType: 'T/F',
     difficulty: 'Easy',
     questionText: 'An integer variable can store fractional values.',
   }),
   seed('Invalid. The true/false answer is not True or False.', {
-    course: 'BSCS',
+    course: '-',
     topic: 'Variables and Data Types',
     questionType: 'T/F',
     difficulty: 'Easy',
@@ -201,7 +201,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
     correctAnswer: 'Yes',
   }),
   seed('Invalid. The MCQ has fewer than two options.', {
-    course: 'BSCS',
+    course: '-',
     topic: 'Control Structures',
     questionType: 'MCQs',
     difficulty: 'Easy',
@@ -210,7 +210,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
     correctAnswer: 'A',
   }),
   seed('Invalid. The correct answer points at an empty option.', {
-    course: 'BSCS',
+    course: '-',
     topic: 'SQL Queries and Joins',
     questionType: 'MCQs',
     difficulty: 'Medium',
@@ -221,7 +221,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
   }),
   seed('Invalid. This Question ID is already in the Question Bank.', {
     questionId: 'QB-001',
-    course: 'BSCS',
+    course: '-',
     topic: 'Variables and Data Types',
     questionType: 'T/F',
     difficulty: 'Easy',
@@ -230,7 +230,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
   }),
   seed('Invalid. QB-950 is used on two rows in this file.', {
     questionId: 'QB-950',
-    course: 'BSCS',
+    course: '-',
     topic: 'Trees and Graphs',
     questionType: 'T/F',
     difficulty: 'Hard',
@@ -239,7 +239,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
   }),
   seed('Invalid. Duplicate of Question ID QB-950 on the previous row.', {
     questionId: 'QB-950',
-    course: 'BSCS',
+    course: '-',
     topic: 'Trees and Graphs',
     questionType: 'MCQs',
     difficulty: 'Medium',
@@ -251,7 +251,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
     correctAnswer: 'A',
   }),
   seed('Invalid. Essay is not a supported question type.', {
-    course: 'MBA',
+    course: 'DPC (O)',
     topic: 'Financial Statements Overview',
     questionType: 'Essay',
     difficulty: 'Medium',
@@ -259,7 +259,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
   }),
   seed('Invalid. The question text is empty.', {
     questionId: 'QB-909',
-    course: 'BSCS',
+    course: '-',
     topic: 'Control Structures',
     questionType: 'T/F',
     difficulty: 'Easy',
@@ -267,7 +267,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
     correctAnswer: 'True',
   }),
   seed('Invalid. Marks must be a positive number.', {
-    course: 'MBA',
+    course: 'DPC (O)',
     topic: 'Financial Statements Overview',
     questionType: 'Subjective',
     difficulty: 'Easy',
@@ -275,7 +275,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
     marks: '-5',
   }),
   seed('Invalid. The correct answer repeats option label A.', {
-    course: 'BSCS',
+    course: '-',
     topic: 'Arrays and Linked Lists',
     questionType: 'MCQs',
     difficulty: 'Medium',
@@ -286,7 +286,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
     correctAnswer: 'A, A',
   }),
   seed('Invalid. The MCQ does not name a correct option.', {
-    course: 'MSAI',
+    course: 'AE (JNC-AE)',
     topic: 'Unsupervised Learning Methods',
     questionType: 'MCQs',
     difficulty: 'Medium',
@@ -297,7 +297,7 @@ export const QUESTION_IMPORT_SEEDS: QuestionImportSeed[] = [
     optionD: 'Sorting',
   }),
   seed('Invalid. Option E is not one of the option columns.', {
-    course: 'BSCS',
+    course: '-',
     topic: 'Stacks and Queues',
     questionType: 'MCQs',
     difficulty: 'Easy',

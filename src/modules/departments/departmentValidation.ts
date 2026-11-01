@@ -10,15 +10,16 @@ export function validateDepartmentForm(
   const errors: DepartmentFormErrors = {}
 
   if (!values.name.trim()) {
-    errors.name = 'Department name is required.'
+    errors.name = 'Wing name is required.'
   }
 
-  if (!values.code.trim()) {
-    errors.code = 'Department code is required.'
-  } else if (!/^[A-Za-z0-9-]{2,10}$/.test(values.code.trim())) {
+  const code = values.code.trim()
+  if (!code) {
+    errors.code = 'Wing code is required.'
+  } else if (code !== '-' && !/^[A-Za-z0-9-]{2,10}$/.test(code)) {
     errors.code = 'Use 2–10 letters, numbers, or hyphens.'
-  } else if (!isDepartmentCodeUnique(departments, values.code, excludeId)) {
-    errors.code = 'Department code must be unique.'
+  } else if (!isDepartmentCodeUnique(departments, code, excludeId)) {
+    errors.code = 'Wing code must be unique.'
   }
 
   if (!values.status) {

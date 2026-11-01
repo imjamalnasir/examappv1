@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { AppLayout } from '@/layouts/AppLayout'
 import { AcademicCreatePage } from '@/pages/academics/AcademicCreatePage'
 import { AcademicEditPage } from '@/pages/academics/AcademicEditPage'
@@ -29,6 +29,10 @@ import { TopicCreatePage } from '@/pages/topics/TopicCreatePage'
 import { TopicEditPage } from '@/pages/topics/TopicEditPage'
 import { TopicsListPage } from '@/pages/topics/TopicsListPage'
 import { TopicViewPage } from '@/pages/topics/TopicViewPage'
+import { StudentCreatePage } from '@/pages/students/StudentCreatePage'
+import { StudentEditPage } from '@/pages/students/StudentEditPage'
+import { StudentsListPage } from '@/pages/students/StudentsListPage'
+import { StudentViewPage } from '@/pages/students/StudentViewPage'
 import { ExamApprovalPage } from '@/pages/exams/ExamApprovalPage'
 import { ExamCreatePage } from '@/pages/exams/ExamCreatePage'
 import { ExamEditPage } from '@/pages/exams/ExamEditPage'
@@ -37,11 +41,17 @@ import { ExamQuestionsPage } from '@/pages/exams/ExamQuestionsPage'
 import { ExamsListPage } from '@/pages/exams/ExamsListPage'
 import { ExamViewPage } from '@/pages/exams/ExamViewPage'
 
+function DepartmentsRedirect() {
+  const location = useLocation()
+  const next = `${location.pathname.replace(/^\/departments/, '/wings')}${location.search}${location.hash}`
+  return <Navigate to={next} replace />
+}
+
 export function AppRoutes() {
   return (
     <Routes>
       <Route element={<AppLayout />}>
-        <Route index element={<Navigate to="/departments" replace />} />
+        <Route index element={<Navigate to="/wings" replace />} />
 
         <Route path="academics">
           <Route index element={<AcademicsListPage />} />
@@ -52,12 +62,14 @@ export function AppRoutes() {
           <Route path=":id/semesters/:semesterId" element={<ManageSemesterSubjectsPage />} />
         </Route>
 
-        <Route path="departments">
+        <Route path="wings">
           <Route index element={<DepartmentsListPage />} />
           <Route path="new" element={<DepartmentCreatePage />} />
           <Route path=":id" element={<DepartmentViewPage />} />
           <Route path=":id/edit" element={<DepartmentEditPage />} />
         </Route>
+        <Route path="departments/*" element={<DepartmentsRedirect />} />
+        <Route path="departments" element={<DepartmentsRedirect />} />
 
         <Route path="courses">
           <Route index element={<CoursesListPage />} />
@@ -80,6 +92,13 @@ export function AppRoutes() {
           <Route path=":id/edit" element={<TopicEditPage />} />
         </Route>
 
+        <Route path="students">
+          <Route index element={<StudentsListPage />} />
+          <Route path="new" element={<StudentCreatePage />} />
+          <Route path=":id" element={<StudentViewPage />} />
+          <Route path=":id/edit" element={<StudentEditPage />} />
+        </Route>
+
         <Route path="exams">
           <Route index element={<ExamsListPage />} />
           <Route path="new" element={<ExamCreatePage />} />
@@ -100,7 +119,7 @@ export function AppRoutes() {
           <Route path=":id/edit" element={<QuestionEditPage />} />
         </Route>
 
-        <Route path="*" element={<Navigate to="/departments" replace />} />
+        <Route path="*" element={<Navigate to="/wings" replace />} />
       </Route>
     </Routes>
   )

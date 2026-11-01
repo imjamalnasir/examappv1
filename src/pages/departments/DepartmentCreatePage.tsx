@@ -19,26 +19,26 @@ export function DepartmentCreatePage() {
 
   const handleSubmit = (values: DepartmentFormValues) => {
     const created = addDepartment(values)
-    toast.success(`Department "${created.name}" created successfully.`)
-    navigate(`/departments/${created.id}`)
+    toast.success(`Wing "${created.name}" created successfully.`)
+    navigate(`/wings/${created.id}`)
   }
 
   return (
     <div>
       <PageHeader
-        title="Add Department"
-        description="Create a new academic department."
+        title="Add Wing"
+        description="Create a new academic wing."
         breadcrumbs={[
-          { label: 'Departments', path: '/departments' },
+          { label: 'Wings', path: '/wings' },
           { label: 'Add' },
         ]}
       />
       <DepartmentForm
         initialValues={emptyValues}
         departments={departments}
-        submitLabel="Create Department"
+        submitLabel="Create Wing"
         onSubmit={handleSubmit}
-        onCancel={() => navigate('/departments')}
+        onCancel={() => navigate('/wings')}
       />
     </div>
   )

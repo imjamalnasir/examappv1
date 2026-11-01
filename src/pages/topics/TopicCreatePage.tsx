@@ -36,7 +36,7 @@ export function TopicCreatePage() {
     <div>
       <PageHeader
         title="Add Topic"
-        description="Create a new topic under a department, course, and subject."
+        description="Create a new topic under a wing, course, and subject."
         breadcrumbs={[
           { label: 'Topics', path: '/topics' },
           { label: 'Add' },

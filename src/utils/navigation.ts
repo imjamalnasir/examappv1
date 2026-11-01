@@ -6,29 +6,32 @@ import {
   GraduationCap,
   Layers,
   Library,
+  Users,
 } from 'lucide-react'
 import type { BreadcrumbItem, NavItem } from '@/types/navigation'
 
-export const APP_NAME = 'University Management System'
+export const APP_NAME = 'Examination Management Software System'
 
 export const navItems: NavItem[] = [
   { label: 'Academics', path: '/academics', icon: GraduationCap },
-  { label: 'Departments', path: '/departments', icon: Building2 },
+  { label: 'Wings', path: '/wings', icon: Building2 },
   { label: 'Courses', path: '/courses', icon: Library },
   { label: 'Subjects', path: '/subjects', icon: BookOpen },
   { label: 'Topics', path: '/topics', icon: Layers },
   { label: 'Question Bank', path: '/question-bank', icon: FileQuestionMark },
   { label: 'Exams', path: '/exams', icon: ClipboardCheck },
+  { label: 'Students', path: '/students', icon: Users },
 ]
 
 const routeLabels: Record<string, string> = {
   academics: 'Academics',
-  departments: 'Departments',
+  wings: 'Wings',
   courses: 'Courses',
   subjects: 'Subjects',
   topics: 'Topics',
   'question-bank': 'Question Bank',
   exams: 'Exams',
+  students: 'Students',
   questions: 'Questions',
   forward: 'Forward to Approval',
   approval: 'Approval',
@@ -40,12 +43,13 @@ const routeLabels: Record<string, string> = {
 
 const singularLabels: Record<string, string> = {
   academics: 'Academic',
-  departments: 'Department',
+  wings: 'Wing',
   courses: 'Course',
   subjects: 'Subject',
   topics: 'Topic',
   'question-bank': 'Question',
   exams: 'Exam',
+  students: 'Student',
 }
 
 const entityIdPattern = /^[A-Z]{2,5}-\d+$/i
@@ -64,7 +68,7 @@ export function getBreadcrumbs(pathname: string): BreadcrumbItem[] {
   const segments = pathname.split('/').filter(Boolean)
 
   if (segments.length === 0) {
-    return [{ label: 'Departments', path: '/departments' }]
+    return [{ label: 'Wings', path: '/wings' }]
   }
 
   const crumbs: BreadcrumbItem[] = []
@@ -87,7 +91,7 @@ export function getPageTitle(pathname: string): string {
   const segments = pathname.split('/').filter(Boolean)
 
   if (segments.length === 0) {
-    return 'Departments'
+    return 'Wings'
   }
 
   const moduleKey = segments[0]
@@ -100,6 +104,19 @@ export function getPageTitle(pathname: string): string {
       return segments.length > 3 ? 'Import Details' : 'Import History'
     }
     return 'Import Questions'
+  }
+
+  if (moduleKey === 'students') {
+    if (last === 'new') {
+      return 'Add Student'
+    }
+    if (last === 'edit') {
+      return 'Edit Student'
+    }
+    if (entityIdPattern.test(last)) {
+      return 'Student Details'
+    }
+    return 'Students'
   }
 
   if (moduleKey === 'exams') {

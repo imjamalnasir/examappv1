@@ -86,7 +86,7 @@ export function CoursesListPage() {
     <div>
       <PageHeader
         title="Courses"
-        description="Manage courses linked to academic departments."
+        description="Manage courses linked to academic wings."
         breadcrumbs={[{ label: 'Courses' }]}
         actions={
           <Button onClick={() => navigate('/courses/new')}>
@@ -105,7 +105,7 @@ export function CoursesListPage() {
               setSearch(event.target.value)
               setPage(1)
             }}
-            placeholder="Search by name, code, ID, or department..."
+            placeholder="Search by name, code, ID, or wing..."
             className="h-10 w-full rounded-md border border-slate-300 bg-white px-3 text-sm outline-none focus:border-sky-600 focus:ring-2 focus:ring-sky-600/20 lg:max-w-sm"
           />
           <select
@@ -116,7 +116,7 @@ export function CoursesListPage() {
             }}
             className="h-10 rounded-md border border-slate-300 bg-white px-3 text-sm outline-none focus:border-sky-600 focus:ring-2 focus:ring-sky-600/20 lg:w-56"
           >
-            <option value="All">All Departments</option>
+            <option value="All">All Wings</option>
             {departments.map((department) => (
               <option key={department.id} value={department.id}>
                 {department.name}
@@ -163,7 +163,7 @@ export function CoursesListPage() {
                     <th className="px-4 py-3">Course ID</th>
                     <th className="px-4 py-3">Course Name</th>
                     <th className="px-4 py-3">Course Code</th>
-                    <th className="px-4 py-3">Department</th>
+                    <th className="px-4 py-3">Wing</th>
                     <th className="px-4 py-3">Duration</th>
                     <th className="px-4 py-3">Description</th>
                     <th className="px-4 py-3">Status</th>

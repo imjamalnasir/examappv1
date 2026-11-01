@@ -37,7 +37,7 @@ export function DepartmentsListPage() {
   const requestDelete = (department: Department) => {
     const counts = getDepartmentDependencyCounts(department.id, courses, subjects, topics)
     if (hasDependencies(counts)) {
-      toast.error(formatDependencyBlockMessage('department', department.name, counts))
+      toast.error(formatDependencyBlockMessage('wing', department.name, counts))
       return
     }
     setDepartmentToDelete(department)
@@ -71,9 +71,9 @@ export function DepartmentsListPage() {
 
     const removed = removeDepartment(departmentToDelete.id)
     if (removed) {
-      toast.success(`Department "${departmentToDelete.name}" deleted.`)
+      toast.success(`Wing "${departmentToDelete.name}" deleted.`)
     } else {
-      toast.error('Unable to delete department.')
+      toast.error('Unable to delete wing.')
     }
     setDepartmentToDelete(null)
   }
@@ -81,13 +81,13 @@ export function DepartmentsListPage() {
   return (
     <div>
       <PageHeader
-        title="Departments"
-        description="Manage university academic departments."
-        breadcrumbs={[{ label: 'Departments' }]}
+        title="Wings"
+        description="Manage university academic wings."
+        breadcrumbs={[{ label: 'Wings' }]}
         actions={
-          <Button onClick={() => navigate('/departments/new')}>
+          <Button onClick={() => navigate('/wings/new')}>
             <Plus className="h-4 w-4" />
-            Add New Department
+            Add New Wing
           </Button>
         }
       />
@@ -120,17 +120,17 @@ export function DepartmentsListPage() {
 
         {paginatedItems.length === 0 ? (
           <EmptyState
-            title="No departments found"
+            title="No wings found"
             description={
               departments.length === 0
-                ? 'Get started by adding your first academic department.'
+                ? 'Get started by adding your first academic wing.'
                 : 'Try adjusting your search or status filter.'
             }
             action={
               departments.length === 0 ? (
-                <Button onClick={() => navigate('/departments/new')}>
+                <Button onClick={() => navigate('/wings/new')}>
                   <Plus className="h-4 w-4" />
-                  Add New Department
+                  Add New Wing
                 </Button>
               ) : undefined
             }
@@ -141,9 +141,9 @@ export function DepartmentsListPage() {
               <table className="min-w-full divide-y divide-slate-200 text-left text-sm">
                 <thead className="bg-slate-50 text-xs font-semibold uppercase tracking-wide text-slate-500">
                   <tr>
-                    <th className="px-4 py-3">Department ID</th>
-                    <th className="px-4 py-3">Department Name</th>
-                    <th className="px-4 py-3">Department Code</th>
+                    <th className="px-4 py-3">Wing ID</th>
+                    <th className="px-4 py-3">Wing Name</th>
+                    <th className="px-4 py-3">Wing Code</th>
                     <th className="px-4 py-3">Description</th>
                     <th className="px-4 py-3">Status</th>
                     <th className="px-4 py-3">Created Date</th>
@@ -174,7 +174,7 @@ export function DepartmentsListPage() {
                       <td className="whitespace-nowrap px-4 py-3">
                         <div className="flex items-center justify-end gap-1">
                           <Link
-                            to={`/departments/${department.id}`}
+                            to={`/wings/${department.id}`}
                             className="rounded-md p-2 text-slate-500 hover:bg-slate-100 hover:text-sky-700"
                             aria-label={`View ${department.name}`}
                             title="View"
@@ -182,7 +182,7 @@ export function DepartmentsListPage() {
                             <Eye className="h-4 w-4" />
                           </Link>
                           <Link
-                            to={`/departments/${department.id}/edit`}
+                            to={`/wings/${department.id}/edit`}
                             className="rounded-md p-2 text-slate-500 hover:bg-slate-100 hover:text-sky-700"
                             aria-label={`Edit ${department.name}`}
                             title="Edit"
@@ -217,7 +217,7 @@ export function DepartmentsListPage() {
 
       <ConfirmDialog
         open={Boolean(departmentToDelete)}
-        title="Delete Department"
+        title="Delete Wing"
         message={`Are you sure you want to delete "${departmentToDelete?.name}"? This action cannot be undone.`}
         onCancel={() => setDepartmentToDelete(null)}
         onConfirm={handleDelete}

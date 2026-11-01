@@ -12,6 +12,9 @@ export function isCourseCodeUnique(
   excludeId?: string,
 ): boolean {
   const normalized = code.trim().toUpperCase()
+  if (normalized === '-') {
+    return true
+  }
   return !courses.some(
     (course) => course.code.toUpperCase() === normalized && course.id !== excludeId,
   )

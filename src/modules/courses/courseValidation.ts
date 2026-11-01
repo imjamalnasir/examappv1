@@ -12,16 +12,17 @@ export function validateCourseForm(
     errors.name = 'Course name is required.'
   }
 
-  if (!values.code.trim()) {
+  const code = values.code.trim()
+  if (!code) {
     errors.code = 'Course code is required.'
-  } else if (!/^[A-Za-z0-9-]{2,12}$/.test(values.code.trim())) {
+  } else if (code !== '-' && !/^[A-Za-z0-9-]{2,12}$/.test(code)) {
     errors.code = 'Use 2–12 letters, numbers, or hyphens.'
-  } else if (!isCourseCodeUnique(courses, values.code, excludeId)) {
+  } else if (!isCourseCodeUnique(courses, code, excludeId)) {
     errors.code = 'Course code must be unique.'
   }
 
   if (!values.departmentId) {
-    errors.departmentId = 'Department is required.'
+    errors.departmentId = 'Wing is required.'
   }
 
   if (!values.status) {

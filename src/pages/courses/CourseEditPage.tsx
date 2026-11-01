@@ -60,7 +60,7 @@ export function CourseEditPage() {
     <div>
       <PageHeader
         title={`Edit ${course.name}`}
-        description="Update course information and department association."
+        description="Update course information and wing association."
         breadcrumbs={[
           { label: 'Courses', path: '/courses' },
           { label: course.name, path: `/courses/${course.id}` },

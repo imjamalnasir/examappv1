@@ -136,13 +136,4 @@ export const initialTopics: Topic[] = [
     status: 'Active',
     createdDate: '2024-06-15',
   },
-  {
-    id: 'TOP-016',
-    name: 'Romantic Poetry Themes',
-    subjectId: 'SUB-011',
-    description: 'Major Romantic poets and recurring literary themes.',
-    displayOrder: 1,
-    status: 'Inactive',
-    createdDate: '2024-06-16',
-  },
 ]

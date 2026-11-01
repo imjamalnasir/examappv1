@@ -17,6 +17,7 @@ import {
 import { ExamRemarksDialog } from '@/modules/exams/ExamRemarksDialog'
 import { ExamRoleBar } from '@/modules/exams/ExamRoleBar'
 import { ExamWorkflowStepper } from '@/modules/exams/ExamWorkflowStepper'
+import { ExamEnrolledStudents } from '@/modules/students/ExamEnrolledStudents'
 import {
   canDecideExam,
   canEditExamInfo,
@@ -164,6 +165,7 @@ function ExamViewContent({ exam }: { exam: Exam }) {
       </ExamWorkflowStepper>
 
       <ExamInformationPanel exam={exam} />
+      <ExamEnrolledStudents exam={exam} />
       <ExamConfigurationPanel exam={exam} />
       <ExamQuestionSection exam={exam} />
       <ExamApprovalPanel exam={exam} />

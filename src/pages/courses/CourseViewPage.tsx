@@ -122,18 +122,18 @@ export function CourseViewPage() {
           </div>
           <div>
             <dt className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-              Associated Department
+              Associated Wing
             </dt>
             <dd className="mt-1 text-sm text-slate-900">
               {department ? (
                 <Link
-                  to={`/departments/${department.id}`}
+                  to={`/wings/${department.id}`}
                   className="text-sky-700 hover:underline"
                 >
                   {department.name}
                 </Link>
               ) : (
-                'Unknown department'
+                'Unknown wing'
               )}
             </dd>
           </div>

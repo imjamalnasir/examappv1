@@ -15,6 +15,9 @@ export function isDepartmentCodeUnique(
   excludeId?: string,
 ): boolean {
   const normalized = code.trim().toUpperCase()
+  if (normalized === '-') {
+    return true
+  }
   return !departments.some(
     (department) =>
       department.code.toUpperCase() === normalized && department.id !== excludeId,
@@ -26,7 +29,7 @@ export function createDepartment(
   values: DepartmentFormValues,
 ): Department {
   return {
-    id: createSequentialId('DEP', departments.map((department) => department.id)),
+    id: createSequentialId('WNG', departments.map((department) => department.id)),
     name: values.name.trim(),
     code: values.code.trim().toUpperCase(),
     description: values.description.trim(),

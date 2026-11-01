@@ -33,7 +33,7 @@ export function SubjectCreatePage() {
     <div>
       <PageHeader
         title="Add Subject"
-        description="Create a new subject and link it to a department and course."
+        description="Create a new subject and link it to a wing and course."
         breadcrumbs={[
           { label: 'Subjects', path: '/subjects' },
           { label: 'Add' },

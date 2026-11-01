@@ -67,7 +67,7 @@ export function CourseForm({
           required
           value={values.name}
           error={errors.name}
-          placeholder="e.g. Bachelor of Science in Computer Science"
+          placeholder="e.g. ATO"
           onChange={(event) => {
             setValues((current) => ({ ...current, name: event.target.value }))
             setErrors((current) => ({ ...current, name: undefined }))
@@ -90,13 +90,13 @@ export function CourseForm({
 
       <div className="grid gap-5 sm:grid-cols-2">
         <Select
-          label="Department"
+          label="Wing"
           name="departmentId"
           required
           options={departmentOptions}
           value={values.departmentId}
           error={errors.departmentId}
-          placeholder="Select a department"
+          placeholder="Select a wing"
           onChange={(event) => {
             setValues((current) => ({ ...current, departmentId: event.target.value }))
             setErrors((current) => ({ ...current, departmentId: undefined }))

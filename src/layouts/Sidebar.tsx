@@ -23,10 +23,10 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
-        <div className="flex h-16 items-center justify-between border-b border-slate-200 px-5">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">Academic</p>
-            <p className="truncate text-sm font-semibold text-slate-900">{APP_NAME}</p>
+        <div className="flex min-h-16 items-center justify-between border-b border-slate-200 px-5 py-3">
+          <div className="min-w-0">
+            <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">Ordnance College</p>
+            <p className="text-sm font-semibold leading-snug text-slate-900">{APP_NAME}</p>
           </div>
           <button
             type="button"
